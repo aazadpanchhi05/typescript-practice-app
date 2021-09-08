@@ -3,9 +3,10 @@ import { Button } from '../Atoms/Button'
 import { FormTitle } from '../Atoms/FormTitle'
 import { InputField } from '../Atoms/InputField'
 import { FormCard } from './Form/FormCard'
+import { Link } from 'react-router-dom';
 
 export const SignupForm = () => {
-    
+
     return (
         <>
             <FormTitle text='Sign Up' />
@@ -37,12 +38,19 @@ export const SignupForm = () => {
 
                     <InputField text='Email' type='email' />
 
+                    <InputField text='Phone' type='text' />
+
                     <InputField text='Password' type='password' />
 
                     <InputField text='Confirm Password' type='password' />
 
                     <Button text='Sign Up' />
                 </form>
+
+                <div className='mt-5 text-sm font-medium'>
+                    You have account ? <Link to='/login' className='text-yellow-500 hover:text-gray-900'>Login</Link>
+                </div>
+
             </FormCard>
         </>
     )
