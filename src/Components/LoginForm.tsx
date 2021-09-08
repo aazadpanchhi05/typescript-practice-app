@@ -1,30 +1,89 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
+import { useHistory, Link } from 'react-router-dom';
+
 import { Button } from '../Atoms/Button'
 import { FormTitle } from '../Atoms/FormTitle'
-import { InputField } from '../Atoms/InputField'
+import Alert from '../Atoms/Alert';
 import { FormCard } from './Form/FormCard'
-import { Link } from 'react-router-dom';
 
-interface Props {
+import { Data } from '../config/data';
 
-}
+export default function LoginForm(): ReactElement {
 
-export default function LoginForm({ }: Props): ReactElement {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [error, setError] = useState('');
+
+    const history = useHistory();
+
+    const emailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    }
+
+    const passwordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.target.value);
+    }
+
+    const onClick = () => {
+        setError('');
+
+        Data.map(x => {
+            if (email === x.email && password === x.password) {
+                history.push('/');
+
+                localStorage.setItem('userInfo', JSON.stringify(x));
+            }
+            else if (email === '' || password === '') {
+                setError('All field required');
+            } else {
+                setError('Email or Password is wrong!');
+            }
+        })
+    }
+
+    const classes = {
+        lable: "block text-sm font-bold mb-2 mt-3 text-gray-700",
+        inputField: "mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus-outline focus:border-transparent",
+        p: 'mt-5 text-sm font-medium',
+        link: 'text-yellow-500 hover:text-gray-900'
+    }
+
     return (
         <>
             <FormTitle text='Login' />
             <FormCard>
                 <form className='bg-white rounded'>
 
-                    <InputField text='Email' type='email' />
+                    {error.length > 0 &&
+                        <Alert error={error} />
+                    }
 
-                    <InputField text='Password' type='password' />
+                    <label className={classes.lable}>
+                        Email
+                    </label>
+                    <input
+                        className={classes.inputField}
+                        id='email'
+                        type='email'
+                        value={email}
+                        onChange={emailChange} />
 
-                    <Button text='Login' />
+                    <label className={classes.lable}>
+                        Password
+                    </label>
+                    <input
+                        className={classes.inputField}
+                        id='password'
+                        type='password'
+                        value={password}
+                        onChange={passwordChange} />
+
+                    <Button text='Login' onclick={onClick} />
                 </form>
 
-                <div className='mt-5 text-sm font-medium'>
-                    You don't have account ? <Link to='/' className='text-yellow-500 hover:text-gray-900'>Register</Link>
+                <div className={classes.p}>
+                    You don't have account ? <Link to='/signup' className={classes.link}>Register</Link>
                 </div>
 
             </FormCard>
