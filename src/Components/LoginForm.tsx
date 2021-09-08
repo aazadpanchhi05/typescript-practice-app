@@ -28,7 +28,7 @@ export default function LoginForm(): ReactElement {
     const onClick = () => {
         setError('');
 
-        Data.map(x => {
+        Data.forEach(x => {
             if (email === x.email && password === x.password) {
                 history.push('/');
 
