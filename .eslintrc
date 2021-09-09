@@ -1,0 +1,16 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "semi": ["error", "never"],
+    "array-callback-return": ["off"],
+    "no-tabs": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react-hooks/exhaustive-deps": 0
+  }
+}
