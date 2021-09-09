@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from 'react'
 import { useHistory } from 'react-router'
-import LoginForm from '../Components/LoginForm'
+import LoginForm from '../Components/Form/LoginForm'
 import isAuth from '../config/isAuth'
 
 export default function SignUp(): ReactElement {

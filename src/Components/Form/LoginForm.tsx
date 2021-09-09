@@ -1,12 +1,12 @@
 import React, { ReactElement, useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
-import Button from '../Atoms/Button'
-import { FormTitle } from '../Atoms/FormTitle'
-import Alert from '../Atoms/Alert'
-import { FormCard } from './Form/FormCard'
+import Button from '../../Atoms/Button'
+import { FormTitle } from '../../Atoms/FormTitle'
+import Alert from '../../Atoms/Alert'
+import { FormCard } from './FormCard'
 
-import { Data } from '../config/data'
+import { Data } from '../../config/data'
 
 export default function LoginForm(): ReactElement {
   const [email, setEmail] = useState('')
