@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, NavLink } from 'react-router-dom'
 
 export const Header = () => {
   const history = useHistory()
@@ -11,6 +11,9 @@ export const Header = () => {
 
   const classes = {
     nav: 'flex items-center justify-between flex-wrap bg-teal-500 p-6',
+    navLink:
+      'block mt-4 lg:inline-block  lg:mt-0 text-gray-200 hover:text-yellow-300 mr-4',
+    navActive: 'block mt-4 lg:inline-block  lg:mt-0 text-yellow-300 mr-4',
     logo: 'font-semibold text-white ml-10 text-xl tracking-tight',
     button:
       'inline-block text-sm mr-10 px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-700 hover:bg-yellow-400 mt-4 lg:mt-0',
@@ -34,30 +37,34 @@ export const Header = () => {
 
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div className="text-md lg:flex-grow ml-4">
-            <Link
+            <NavLink
               to="/"
-              className="block mt-4 lg:inline-block  lg:mt-0 text-gray-200 hover:text-yellow-300 mr-4"
+              className={classes.navLink}
+              activeClassName={classes.navActive}
             >
               Dashboaord
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/settings"
-              className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-yellow-300 mr-4"
+              className={classes.navLink}
+              activeClassName={classes.navActive}
             >
               Setting
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/profile"
-              className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-yellow-300 mr-4"
+              className={classes.navLink}
+              activeClassName={classes.navActive}
             >
               Profile
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/user-list"
-              className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-yellow-300"
+              className={classes.navLink}
+              activeClassName={classes.navActive}
             >
               Users
-            </Link>
+            </NavLink>
           </div>
           <div>
             <button className={classes.button} onClick={logoutHandler}>
