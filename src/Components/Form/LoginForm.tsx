@@ -43,9 +43,9 @@ export default function LoginForm(): ReactElement {
   const classes = {
     lable: 'block text-sm font-bold mb-2 mt-3 text-gray-700',
     inputField:
-      'mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus-outline focus:border-transparent',
+      'mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-indigo-500 ',
     p: 'mt-5 text-sm font-medium',
-    link: 'text-yellow-500 hover:text-gray-900',
+    link: 'text-indigo-500 hover:text-gray-900',
   }
 
   return (

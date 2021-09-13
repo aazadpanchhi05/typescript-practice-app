@@ -10,7 +10,7 @@ const Button = ({ text, onclick }: Props) => {
   }
 
   const classes =
-    'w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 mt-4 rounded'
+    'w-full bg-indigo-800 hover:bg-indigo-500 text-white font-bold py-2 px-4 mt-4 rounded'
 
   return (
     <button className={classes} type="button" onClick={clickEvent}>

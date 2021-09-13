@@ -4,6 +4,7 @@ import Login from './Pages/Login'
 import User from './Pages/UserList'
 import Profile from './Pages/Profile'
 import Setting from './Pages/Setting'
+import { ClassCreation } from './Pages/ClassCreation'
 
 export const routes = [
   {
@@ -35,5 +36,10 @@ export const routes = [
     path: '/setting',
     exact: true,
     component: Setting,
+  },
+  {
+    path: '/classes/new-class',
+    exact: true,
+    component: ClassCreation,
   },
 ]

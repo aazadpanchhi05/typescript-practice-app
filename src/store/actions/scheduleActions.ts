@@ -1,0 +1,36 @@
+import { Dispatch } from 'redux'
+import { ADD_SCHEDULE, DispatchTypes, REMOVE_SCHEDULE } from '../types'
+
+export const addSchedule =
+  (schedule: {
+    title: string
+    subject: {
+      id: number
+      name: string
+    }
+    description: string
+    image: string
+  }) =>
+  (dispatch: Dispatch<DispatchTypes>) => {
+    dispatch({
+      type: ADD_SCHEDULE,
+      payload: schedule,
+    })
+  }
+
+export const removeSchedule =
+  (schedule: {
+    title: string
+    subject: {
+      id: number
+      name: string
+    }
+    description: string
+    image: string
+  }) =>
+  (dispatch: Dispatch<DispatchTypes>) => {
+    dispatch({
+      type: REMOVE_SCHEDULE,
+      payload: schedule,
+    })
+  }

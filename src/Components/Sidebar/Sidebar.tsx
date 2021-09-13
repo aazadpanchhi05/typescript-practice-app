@@ -25,7 +25,7 @@ export const Sidebar = () => {
           </NavLink>
         ))}
       </div>
-      <div>
+      <div className="w-full bg-gray-50">
         {routes.map((item) => (
           <Route
             exact={item.exact}

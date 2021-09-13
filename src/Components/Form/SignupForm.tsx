@@ -59,11 +59,11 @@ const SignupForm = () => {
   const classes = {
     lable: 'block text-sm font-bold mb-2 mt-3 text-gray-700',
     inputField:
-      'mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus-outline focus:border-transparent',
+      'mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-indigo-500 ',
     p: 'mt-5 text-sm font-medium',
-    link: 'text-yellow-500 hover:text-gray-900',
+    link: 'text-indigo-500 hover:text-gray-900',
     nameInputField:
-      'w-full px-3 py-2 text-sm text-gray-700 border rounded shadow appearance-none focus-outline focus:border-transparent',
+      'w-full px-3 py-2 text-sm text-gray-700 border rounded shadow appearance-none focus:outline-none focus:border-indigo-500 ',
     nameLable: 'block mb-2 text-sm font-bold text-gray-700',
   }
 
@@ -139,7 +139,7 @@ const SignupForm = () => {
 
         <div className="mt-5 text-sm font-medium">
           You have account ?{' '}
-          <Link to="/login" className="text-yellow-500 hover:text-gray-900">
+          <Link to="/login" className={classes.link}>
             Login
           </Link>
         </div>
