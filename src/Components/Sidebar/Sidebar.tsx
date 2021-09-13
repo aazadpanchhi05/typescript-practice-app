@@ -3,23 +3,25 @@ import { NavLink, Route } from 'react-router-dom'
 import { routes } from '../../routes'
 import { SidebarData } from './SidebarData'
 
-interface Props {
-  child?: React.ReactElement
-}
+export const Sidebar = () => {
+  const classes = {
+    sidebar: 'bg-white flex-shrink-0 min-h-screen w-64 border-r-2',
+    nav: 'flex flex-row space-x-5  p-3 text-black hover:bg-indigo-400 hover:text-white',
+    navActive: 'flex text-white bg-indigo-500',
+  }
 
-export const Sidebar: React.FC<Props> = ({ child }: Props) => {
   return (
     <div className="flex">
-      <div className="bg-white flex-shrink-0 min-h-screen w-64 border-r-2">
+      <div className={classes.sidebar}>
         {SidebarData.map((item) => (
           <NavLink
-            className="flex flex-row space-x-5  p-3 text-black hover:bg-indigo-400 hover:text-white"
+            className={classes.nav}
             to={item.path}
-            activeClassName="flex text-white bg-indigo-500"
+            activeClassName={classes.navActive}
             exact
           >
             <i className="mt-1">{item.icon}</i>
-            <div className="">{item.title}</div>
+            <div>{item.title}</div>
           </NavLink>
         ))}
       </div>
