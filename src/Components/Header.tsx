@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory, NavLink } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export const Header = () => {
   const history = useHistory()
@@ -16,13 +16,13 @@ export const Header = () => {
     navActive: 'block mt-4 lg:inline-block  lg:mt-0 text-yellow-300 mr-4',
     logo: 'font-semibold text-white ml-10 text-xl tracking-tight',
     button:
-      'inline-block text-sm mr-10 px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-700 hover:bg-yellow-400 mt-4 lg:mt-0',
+      'inline-block text-sm mr-10 px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-white hover:bg-indigo-500 mt-4 lg:mt-0',
   }
 
   return (
-    <div className="header-2 bg-gray-700">
+    <div className=" bg-gray-100">
       <nav className={classes.nav}>
-        <div className="block lg:hidden">
+        {/* <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
             <svg
               className="fill-current h-3 w-3"
@@ -33,39 +33,10 @@ export const Header = () => {
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
-        </div>
+        </div> */}
 
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-md lg:flex-grow ml-4">
-            <NavLink
-              to="/"
-              className={classes.navLink}
-              activeClassName={classes.navActive}
-            >
-              Dashboaord
-            </NavLink>
-            <NavLink
-              to="/settings"
-              className={classes.navLink}
-              activeClassName={classes.navActive}
-            >
-              Setting
-            </NavLink>
-            <NavLink
-              to="/profile"
-              className={classes.navLink}
-              activeClassName={classes.navActive}
-            >
-              Profile
-            </NavLink>
-            <NavLink
-              to="/user-list"
-              className={classes.navLink}
-              activeClassName={classes.navActive}
-            >
-              Users
-            </NavLink>
-          </div>
+          <div className="text-md font-bold lg:flex-grow ml-4 ">Header</div>
           <div>
             <button className={classes.button} onClick={logoutHandler}>
               Logout

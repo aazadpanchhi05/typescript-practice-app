@@ -6,31 +6,29 @@ import {
   Route,
   withRouter,
 } from 'react-router-dom'
-import SignUp from './Pages/SignUp'
-import Login from './Pages/Login'
-import Setting from './Pages/Setting'
-import Profile from './Pages/Profile'
-import UserList from './Pages/UserList'
-import Home from './Pages/Home'
 import { Header } from './Components/Header'
+import { Sidebar } from './Components/Sidebar/Sidebar'
+import { routes } from './routes'
 
 function App() {
   const Main = withRouter(({ location }) => {
     return (
       <>
-        {location.pathname !== '/login' && location.pathname !== '/signup' && (
-          <Header />
-        )}
-        <main>
-          <Switch>
-            <Route path="/settings" component={Setting} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/user-list" component={UserList} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/" component={Home} exact />
-          </Switch>
-        </main>
+        <Switch>
+          {location.pathname !== '/login' && location.pathname !== '/signup' && (
+            <>
+              <Header />
+              <Sidebar />
+            </>
+          )}
+          {routes.map((item) => (
+            <Route
+              path={item.path}
+              exact={item.exact}
+              component={item.component}
+            />
+          ))}
+        </Switch>
       </>
     )
   })
