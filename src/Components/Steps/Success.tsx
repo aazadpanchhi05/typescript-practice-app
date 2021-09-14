@@ -37,7 +37,7 @@ export const Success = ({ resetPage }: Props) => {
         name: '',
       },
       description: '',
-      image: image,
+      image: '',
       teachers: [],
       students: [],
       emailType: '',

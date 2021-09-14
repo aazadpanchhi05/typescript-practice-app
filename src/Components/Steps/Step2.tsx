@@ -31,7 +31,7 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
   const [selectedTeacher, setSelectedTeachers] = useState<teacher[]>([])
   const [emailInput, setEmailInput] = useState('')
   const [emailTags, setEmailTags] = useState(schedule.students)
-  const [emailType, setEmailType] = useState('everyone')
+  const [emailType, setEmailType] = useState('Everyone')
 
   const [error, setError] = useState('')
 
