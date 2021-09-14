@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import Button from '../../Atoms/Button'
 import { FormTitle } from '../../Atoms/FormTitle'
 import Alert from '../../Atoms/Alert'
-
 import { FormCard } from '../Form/FormCard'
 
 import { RootStore } from '../../store/store'
@@ -56,6 +55,9 @@ export const Step1 = ({ nextPage }: Props) => {
         },
         description: topicDesc,
         image: image,
+        teachers: [],
+        students: [],
+        emailType: '',
       }
 
       dispatch(addSchedule(scheduleTemp))
@@ -73,7 +75,7 @@ export const Step1 = ({ nextPage }: Props) => {
 
   return (
     <>
-      <FormTitle text="Step 1" paragraph="Basic Details" />
+      <FormTitle text="Step 1 of 3" paragraph="Basic Details" />
       <FormCard>
         <form className="bg-white rounded">
           {error.length > 0 && <Alert error={error} />}

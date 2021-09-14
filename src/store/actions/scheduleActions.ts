@@ -1,5 +1,10 @@
 import { Dispatch } from 'redux'
-import { ADD_SCHEDULE, DispatchTypes, REMOVE_SCHEDULE } from '../types'
+import {
+  ADD_SCHEDULE,
+  DispatchTypes,
+  REMOVE_SCHEDULE,
+  teacherObj,
+} from '../types'
 
 export const addSchedule =
   (schedule: {
@@ -10,6 +15,9 @@ export const addSchedule =
     }
     description: string
     image: string
+    teachers: teacherObj[]
+    students: string[]
+    emailType: string
   }) =>
   (dispatch: Dispatch<DispatchTypes>) => {
     dispatch({
@@ -27,6 +35,9 @@ export const removeSchedule =
     }
     description: string
     image: string
+    teachers: teacherObj[]
+    students: string[]
+    emailType: string
   }) =>
   (dispatch: Dispatch<DispatchTypes>) => {
     dispatch({

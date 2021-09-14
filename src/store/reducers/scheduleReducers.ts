@@ -1,4 +1,4 @@
-import { DispatchTypes } from '../types'
+import { DispatchTypes, teacherObj } from '../types'
 
 export interface ScheduleState {
   schedule: {
@@ -9,6 +9,9 @@ export interface ScheduleState {
     }
     description: string
     image: string
+    teachers: teacherObj[]
+    students: string[]
+    emailType: string
   }
 }
 
@@ -21,6 +24,9 @@ const init = {
     },
     description: '',
     image: '',
+    teachers: [],
+    students: [],
+    emailType: '',
   },
 }
 
