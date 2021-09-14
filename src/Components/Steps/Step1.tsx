@@ -58,6 +58,11 @@ export const Step1 = ({ nextPage }: Props) => {
         teachers: [],
         students: [],
         emailType: '',
+        date: '',
+        time: '',
+        duration: 0,
+        link: '',
+        note: '',
       }
 
       dispatch(addSchedule(scheduleTemp))

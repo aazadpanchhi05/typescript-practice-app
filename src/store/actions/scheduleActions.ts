@@ -18,6 +18,11 @@ export const addSchedule =
     teachers: teacherObj[]
     students: string[]
     emailType: string
+    date: string
+    time: string
+    duration: number
+    link: string
+    note: string
   }) =>
   (dispatch: Dispatch<DispatchTypes>) => {
     dispatch({
@@ -38,6 +43,11 @@ export const removeSchedule =
     teachers: teacherObj[]
     students: string[]
     emailType: string
+    date: string
+    time: string
+    duration: number
+    link: string
+    note: string
   }) =>
   (dispatch: Dispatch<DispatchTypes>) => {
     dispatch({

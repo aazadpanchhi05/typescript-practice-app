@@ -108,6 +108,11 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
         teachers: selectedTeacher,
         students: emailTags,
         emailType: emailType,
+        date: '',
+        time: '',
+        duration: 0,
+        link: '',
+        note: '',
       }
       dispatch(addSchedule(scheduleTemp))
       nextPage()

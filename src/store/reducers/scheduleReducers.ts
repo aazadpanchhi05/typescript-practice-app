@@ -12,6 +12,11 @@ export interface ScheduleState {
     teachers: teacherObj[]
     students: string[]
     emailType: string
+    date: string
+    time: string
+    duration: number
+    link: string
+    note: string
   }
 }
 
@@ -27,6 +32,11 @@ const init = {
     teachers: [],
     students: [],
     emailType: '',
+    date: '',
+    time: '',
+    duration: 0,
+    link: '',
+    note: '',
   },
 }
 

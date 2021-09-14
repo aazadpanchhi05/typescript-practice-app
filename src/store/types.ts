@@ -17,6 +17,11 @@ export interface schedulePayload {
   teachers: teacherObj[]
   students: string[]
   emailType: string
+  date: string
+  time: string
+  duration: number
+  link: string
+  note: string
 }
 
 export interface AddSchedule {

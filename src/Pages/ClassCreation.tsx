@@ -20,7 +20,7 @@ export const ClassCreation = (props: Props) => {
     <div className="p-5">
       {count === 1 && <Step1 nextPage={nextPage} />}
       {count === 2 && <Step2 nextPage={nextPage} prevPage={prevPage} />}
-      {count === 3 && <Step3 />}
+      {count === 3 && <Step3 nextPage={nextPage} prevPage={prevPage} />}
     </div>
   )
 }
