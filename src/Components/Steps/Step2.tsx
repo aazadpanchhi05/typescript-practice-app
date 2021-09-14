@@ -167,6 +167,7 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
               onChange={onEmailChange}
               onKeyPress={onEmailKeyPress}
             />
+            <p className="text-xs text-gray-500">Press Enter to add email</p>
           </div>
 
           <div>
@@ -178,7 +179,7 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
                   className="form-radio"
                   name="emailType"
                   defaultChecked
-                  value="everyone"
+                  value="Everyone"
                   onChange={onEmailTypeChange}
                 />
                 <span className="ml-2">Everyone</span>
@@ -188,7 +189,7 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
                   type="radio"
                   className="form-radio"
                   name="emailType"
-                  value="teachersOnly"
+                  value="Teachers Only"
                   onChange={onEmailTypeChange}
                 />
                 <span className="ml-2">Teachers Only</span>
@@ -198,7 +199,7 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
                   type="radio"
                   className="form-radio"
                   name="emailType"
-                  value="studentsOnly"
+                  value="Students Only"
                   onChange={onEmailTypeChange}
                 />
                 <span className="ml-2">Students Only</span>
