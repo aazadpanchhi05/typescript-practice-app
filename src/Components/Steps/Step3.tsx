@@ -79,6 +79,25 @@ export const Step3 = ({ nextPage, prevPage }: Props) => {
         note: note,
       }
 
+      const temp = {
+        title: schedule.title,
+        subject: {
+          id: schedule.subject.id,
+          name: schedule.subject.name,
+        },
+        description: schedule.description,
+        teachers: schedule.teachers,
+        students: schedule.students,
+        emailType: schedule.emailType,
+        date: date,
+        time: `${hour}:${min} ${day}`,
+        duration: dua,
+        link: link,
+        note: note,
+      }
+
+      localStorage.setItem('Schedule', JSON.stringify(temp))
+
       dispatch(addSchedule(scheduleTemp))
       nextPage()
     }
