@@ -1,10 +1,11 @@
-import Home from './Pages/Home'
-import SignUp from './Pages/SignUp'
-import Login from './Pages/Login'
-import User from './Pages/UserList'
-import Profile from './Pages/Profile'
-import Setting from './Pages/Setting'
-import { ClassCreation } from './Pages/ClassCreation'
+import Home from 'Pages/Home'
+import SignUp from 'Pages/SignUp'
+import Login from 'Pages/Login'
+import User from 'Pages/UserList'
+import Profile from 'Pages/Profile'
+import Setting from 'Pages/Setting'
+import GithubIssue from 'Pages/GithubIssue'
+import { ClassCreation } from 'Pages/ClassCreation'
 
 export const routes = [
   {
@@ -41,5 +42,10 @@ export const routes = [
     path: '/classes/new-class',
     exact: true,
     component: ClassCreation,
+  },
+  {
+    path: '/issue',
+    exact: true,
+    component: GithubIssue,
   },
 ]

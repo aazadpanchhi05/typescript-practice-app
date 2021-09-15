@@ -3,6 +3,7 @@ import { MdDashboard } from 'react-icons/md'
 import { FiUsers, FiSettings } from 'react-icons/fi'
 import { CgProfile } from 'react-icons/cg'
 import { BiAddToQueue } from 'react-icons/bi'
+import { AiFillGithub } from 'react-icons/ai'
 
 export const SidebarData: SidebarItem[] = [
   {
@@ -14,6 +15,11 @@ export const SidebarData: SidebarItem[] = [
     title: 'Class Creation',
     path: '/classes/new-class',
     icon: <BiAddToQueue />,
+  },
+  {
+    title: 'Github Issue',
+    path: '/issue',
+    icon: <AiFillGithub />,
   },
   {
     title: 'User',
