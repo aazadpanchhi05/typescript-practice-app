@@ -120,7 +120,12 @@ export default function GithubIssue(): ReactElement {
             totalIssues={searchBoolean ? tableIssues.length : issues.length}
           />
 
-          <Pagination currentPage={currentPage} setData={setData} />
+          <Pagination
+            currentPage={currentPage}
+            setData={setData}
+            totalPosts={issues.length}
+            issuesPerPage={tableIssues.length}
+          />
         </>
       )}
     </div>
