@@ -5,21 +5,10 @@ import { Link } from 'react-router-dom'
 interface Props {
   setData: (n: number) => void
   currentPage: number
-  totalPosts: number
-  issuesPerPage: number
 }
 
-export const Pagination = ({
-  setData,
-  currentPage,
-  totalPosts,
-  issuesPerPage,
-}: Props) => {
-  const pageNumbers = []
-
-  for (let i = 1; i <= Math.ceil(totalPosts / issuesPerPage); i++) {
-    pageNumbers.push(i)
-  }
+export const Pagination = ({ setData, currentPage }: Props) => {
+  const pageNumbers = [1, 2, 3, 4]
 
   return (
     <div className="py-2 ml-2">
