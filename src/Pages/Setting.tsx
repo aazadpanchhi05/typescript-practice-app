@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from 'react'
 import { useHistory } from 'react-router'
-import isAuth from '../config/isAuth'
+import isAuth from 'config/isAuth'
 
 export default function Home(): ReactElement {
   const history = useHistory()

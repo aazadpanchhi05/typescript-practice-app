@@ -1,14 +1,14 @@
 import React from 'react'
-import './App.css'
+import 'App.css'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   withRouter,
 } from 'react-router-dom'
-import { Header } from './Components/Header'
-import { Sidebar } from './Components/Sidebar/Sidebar'
-import { routes } from './routes'
+import { Header } from 'Components/Header'
+import { Sidebar } from 'Components/Sidebar/Sidebar'
+import { routes } from 'routes'
 
 function App() {
   const Main = withRouter(({ location }) => {

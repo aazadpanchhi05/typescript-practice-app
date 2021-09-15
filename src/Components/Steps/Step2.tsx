@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import Button from '../../Atoms/Button'
-import { FormTitle } from '../../Atoms/FormTitle'
-import Alert from '../../Atoms/Alert'
+import Button from 'Atoms/Button'
+import { FormTitle } from 'Atoms/FormTitle'
+import Alert from 'Atoms/Alert'
 import { FormCard } from '../Form/FormCard'
 
 import Multiselect from 'multiselect-react-dropdown'
@@ -10,8 +10,8 @@ import { ImCross } from 'react-icons/im'
 
 import faker from 'faker'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootStore } from '../../store/store'
-import { addSchedule } from '../../store/actions/scheduleActions'
+import { RootStore } from 'store/store'
+import { addSchedule } from 'store/actions/scheduleActions'
 interface Props {
   nextPage: () => void
   prevPage: () => void

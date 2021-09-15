@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Button from '../../Atoms/Button'
-import { removeSchedule } from '../../store/actions/scheduleActions'
-import { RootStore } from '../../store/store'
+import Button from 'Atoms/Button'
+import { removeSchedule } from 'store/actions/scheduleActions'
+import { RootStore } from 'store/store'
 import { FormCard } from '../Form/FormCard'
 
 interface Props {
@@ -47,6 +47,8 @@ export const Success = ({ resetPage }: Props) => {
       link: '',
       note: '',
     }
+
+    localStorage.removeItem('Schedule')
 
     dispatch(removeSchedule(scheduleTemp))
 

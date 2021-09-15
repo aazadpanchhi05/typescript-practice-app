@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Route } from 'react-router-dom'
-import { routes } from '../../routes'
+import { routes } from 'routes'
 import { SidebarData } from './SidebarData'
 
 export const Sidebar = () => {

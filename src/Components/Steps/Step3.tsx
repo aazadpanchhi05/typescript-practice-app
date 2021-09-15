@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
-import Button from '../../Atoms/Button'
-import { FormTitle } from '../../Atoms/FormTitle'
-import Alert from '../../Atoms/Alert'
+import Button from 'Atoms/Button'
+import { FormTitle } from 'Atoms/FormTitle'
+import Alert from 'Atoms/Alert'
 import { FormCard } from '../Form/FormCard'
 
-import { RootStore } from '../../store/store'
-import { addSchedule } from '../../store/actions/scheduleActions'
+import { RootStore } from 'store/store'
+import { addSchedule } from 'store/actions/scheduleActions'
 
 interface Props {
   nextPage: () => void
@@ -36,7 +36,7 @@ export const Step3 = ({ nextPage, prevPage }: Props) => {
   const [min, setMin] = useState(defaultMin >= 30 ? '30' : '00')
   const [day, setDay] = useState(arr[1])
 
-  const [dua, setDua] = useState(60)
+  const [duration, setDuration] = useState(60)
   const [link, setLink] = useState('')
   const [note, setNote] = useState('')
 
@@ -48,9 +48,15 @@ export const Step3 = ({ nextPage, prevPage }: Props) => {
     const urlRegex =
       /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i
 
-    if (hour === '' || min === '' || day === '' || link === '' || dua === 0) {
+    if (
+      hour === '' ||
+      min === '' ||
+      day === '' ||
+      link === '' ||
+      duration === 0
+    ) {
       setError('Required field cant be empty!')
-    } else if (dua < 60 || dua > 240) {
+    } else if (duration < 60 || duration > 240) {
       setError('Duration must be between 60 to 240')
     } else if (!urlRegex.test(link)) {
       setError('Link is unvalid')
@@ -74,7 +80,7 @@ export const Step3 = ({ nextPage, prevPage }: Props) => {
         emailType: schedule.emailType,
         date: date,
         time: `${hour}:${min} ${day}`,
-        duration: dua,
+        duration: duration,
         link: link,
         note: note,
       }
@@ -91,7 +97,7 @@ export const Step3 = ({ nextPage, prevPage }: Props) => {
         emailType: schedule.emailType,
         date: date,
         time: `${hour}:${min} ${day}`,
-        duration: dua,
+        duration: duration,
         link: link,
         note: note,
       }
@@ -188,8 +194,8 @@ export const Step3 = ({ nextPage, prevPage }: Props) => {
             type="number"
             min="60"
             max="240"
-            value={dua}
-            onChange={(e) => setDua(Number(e.target.value))}
+            value={duration}
+            onChange={(e) => setDuration(Number(e.target.value))}
           />
 
           <label className={classes.lable}>Meeting Link *</label>

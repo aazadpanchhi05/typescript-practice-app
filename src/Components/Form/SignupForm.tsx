@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
-import Button from '../../Atoms/Button'
-import { FormTitle } from '../../Atoms/FormTitle'
+import Button from 'Atoms/Button'
+import { FormTitle } from 'Atoms/FormTitle'
 import { FormCard } from './FormCard'
-import Alert from '../../Atoms/Alert'
+import Alert from 'Atoms/Alert'
 
-import { Data } from '../../config/data'
+import { Data } from 'config/data'
 
 const SignupForm = () => {
   const [firstName, setFirstName] = useState('')

@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
-import { Step1 } from '../Components/Steps/Step1'
-import { Step2 } from '../Components/Steps/Step2'
-import { Step3 } from '../Components/Steps/Step3'
-import { Success } from '../Components/Steps/Success'
+import React, { useEffect, useState } from 'react'
+import { Step1 } from 'Components/Steps/Step1'
+import { Step2 } from 'Components/Steps/Step2'
+import { Step3 } from 'Components/Steps/Step3'
+import { Success } from 'Components/Steps/Success'
+import { useHistory } from 'react-router'
+import isAuth from 'config/isAuth'
 
 interface Props {}
 
 export const ClassCreation = (props: Props) => {
   const [count, setCount] = useState(1)
+
+  const history = useHistory()
+
+  let auth = isAuth()
+
+  useEffect(() => {
+    if (!auth) {
+      history.push('/login')
+    }
+  }, [auth, history])
 
   const nextPage = () => {
     setCount(count + 1)

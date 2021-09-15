@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import Button from '../../Atoms/Button'
-import { FormTitle } from '../../Atoms/FormTitle'
-import Alert from '../../Atoms/Alert'
+import Button from 'Atoms/Button'
+import { FormTitle } from 'Atoms/FormTitle'
+import Alert from 'Atoms/Alert'
 import { FormCard } from '../Form/FormCard'
 
-import { RootStore } from '../../store/store'
-import { addSchedule } from '../../store/actions/scheduleActions'
+import { RootStore } from 'store/store'
+import { addSchedule } from 'store/actions/scheduleActions'
 
-import subjects from '../../config/subjects'
+import subjects from 'config/subjects'
 
 interface Props {
   nextPage: () => void
