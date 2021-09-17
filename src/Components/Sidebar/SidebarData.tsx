@@ -1,5 +1,5 @@
 import { SidebarItem } from './SidebarItem'
-import { MdDashboard } from 'react-icons/md'
+import { MdDashboard, MdDateRange } from 'react-icons/md'
 import { FiUsers, FiSettings } from 'react-icons/fi'
 import { CgProfile } from 'react-icons/cg'
 import { BiAddToQueue } from 'react-icons/bi'
@@ -20,6 +20,11 @@ export const SidebarData: SidebarItem[] = [
     title: 'Github Issue',
     path: '/issue',
     icon: <AiFillGithub />,
+  },
+  {
+    title: 'Calendar UI',
+    path: '/calendar',
+    icon: <MdDateRange />,
   },
   {
     title: 'User',

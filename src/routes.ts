@@ -6,6 +6,7 @@ import Profile from 'Pages/Profile'
 import Setting from 'Pages/Setting'
 import GithubIssue from 'Pages/GithubIssue'
 import { ClassCreation } from 'Pages/ClassCreation'
+import Calendar from 'Pages/Calendar'
 
 export const routes = [
   {
@@ -47,5 +48,10 @@ export const routes = [
     path: '/issue',
     exact: true,
     component: GithubIssue,
+  },
+  {
+    path: '/calendar',
+    exact: true,
+    component: Calendar,
   },
 ]

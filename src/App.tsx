@@ -15,12 +15,14 @@ function App() {
     return (
       <>
         <Switch>
-          {location.pathname !== '/login' && location.pathname !== '/signup' && (
-            <>
-              <Header />
-              <Sidebar />
-            </>
-          )}
+          {location.pathname !== '/login' &&
+            location.pathname !== '/signup' &&
+            location.pathname !== '/calendar' && (
+              <>
+                <Header />
+                <Sidebar />
+              </>
+            )}
           {routes.map((item) => (
             <Route
               path={item.path}
