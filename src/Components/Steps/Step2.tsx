@@ -124,10 +124,10 @@ export const Step2 = ({ nextPage, prevPage }: Props) => {
     inputField:
       'mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-indigo-500 ',
     img: 'object-cover shadow w-full h-64 rounded',
-    tag: 'bg-blue-100 inline-flex items-center text-sm rounded my-2 mr-1 overflow-hidden',
+    tag: 'bg-defaultBlue-100 inline-flex items-center text-sm rounded my-2 mr-1 overflow-hidden',
     tagText: 'ml-2 mr-1 leading-relaxed truncate max-w-xs px-1',
     tagButton:
-      'w-6 h-8 inline-block align-middle p-1 text-red-500 bg-blue-200 focus:outline-none',
+      'w-6 h-8 inline-block align-middle p-1 text-red-500 bg-defaultBlue-200 focus:outline-none',
   }
 
   return (
